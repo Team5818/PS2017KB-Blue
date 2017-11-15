@@ -1,8 +1,8 @@
 
-package org.usfirst.frc.team7177.robot;
+package org.usfirst.frc.team7171.robot;
 
-import org.usfirst.frc.team7177.robot.commands.ExampleCommand;
-import org.usfirst.frc.team7177.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team7171.robot.commands.ExampleCommand;
+import org.usfirst.frc.team7171.robot.subsystems.ExampleSubsystem;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
