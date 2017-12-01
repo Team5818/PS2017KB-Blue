@@ -20,6 +20,11 @@ public class DriveTrainSide extends Subsystem {
 			back = new CANTalon(RobotMap.L_TALON_B);
 		}
 	}
+	
+	public void setPower(double power) {
+		front.set(power);
+		back.set(power);
+	}
 
 	@Override
 	protected void initDefaultCommand() {

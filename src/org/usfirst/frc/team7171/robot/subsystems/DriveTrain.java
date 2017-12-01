@@ -11,6 +11,11 @@ public class DriveTrain extends Subsystem {
 		left = new DriveTrainSide(false);
 		right = new DriveTrainSide(true);
 	}
+	
+	public void setPower(double powLeft, double powRight) {
+		left.setPower(powLeft);
+		right.setPower(powRight);
+	}
 
 	@Override
 	protected void initDefaultCommand() {
