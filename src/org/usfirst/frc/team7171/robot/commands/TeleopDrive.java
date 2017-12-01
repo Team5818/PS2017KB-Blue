@@ -1,6 +1,7 @@
 package org.usfirst.frc.team7171.robot.commands;
 
 import org.usfirst.frc.team7171.robot.OI;
+import org.usfirst.frc.team7171.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -8,6 +9,12 @@ public class TeleopDrive extends Command {
 
 	private static double deadband = 0.1;
 	
+	@Override
+	protected void initialize() {
+		requires(Robot.dt);
+		setInterruptible(true);
+	}
+
 	@Override
 	protected void execute() {
 		double fwBack = OI.jsFwBack.getY();
