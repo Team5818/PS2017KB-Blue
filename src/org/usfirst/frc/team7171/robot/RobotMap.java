@@ -22,5 +22,6 @@ public class RobotMap {
 	public static final int R_TALON_F = 2;
 	public static final int R_TALON_B = 3;
 	
-	
+	public static final int JS_FW_BACK = 0;
+	public static final int JS_TURN = 1;
 }
