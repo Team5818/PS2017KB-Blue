@@ -1,8 +1,6 @@
 package org.usfirst.frc.team7171.robot;
 
 import org.usfirst.frc.team7171.robot.commands.DisableRobot;
-import org.usfirst.frc.team7171.robot.commands.ExampleCommand;
-
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
