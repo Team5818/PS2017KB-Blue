@@ -24,4 +24,5 @@ public class RobotMap {
 	
 	public static final int JS_FW_BACK = 0;
 	public static final int JS_TURN = 1;
+	public static final int CD_BUTTONS = 2;
 }
