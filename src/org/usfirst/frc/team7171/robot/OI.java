@@ -1,9 +1,11 @@
 package org.usfirst.frc.team7171.robot;
 
+import org.usfirst.frc.team7171.robot.commands.DisableRobot;
 import org.usfirst.frc.team7171.robot.commands.ExampleCommand;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -39,9 +41,16 @@ public class OI {
 	// button.whenReleased(new ExampleCommand());
 	public static Joystick jsFwBack;
 	public static Joystick jsTurn;
+	public static Joystick coDriverButtons;
+	private Button deadman;
+	private DisableRobot disable;
 	
 	public OI() {
 		jsFwBack = new Joystick(RobotMap.JS_FW_BACK);
 		jsTurn = new Joystick(RobotMap.JS_TURN);
+		coDriverButtons = new Joystick(RobotMap.CD_BUTTONS);
+		deadman = new JoystickButton(coDriverButtons, 0);
+		deadman.whenReleased(disable);
+		deadman.cancelWhenPressed(disable);
 	}
 }
