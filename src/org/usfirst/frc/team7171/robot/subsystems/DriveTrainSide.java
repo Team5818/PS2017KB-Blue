@@ -4,9 +4,7 @@ import org.usfirst.frc.team7171.robot.RobotMap;
 
 import com.ctre.CANTalon;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
-
-public class DriveTrainSide extends Subsystem {
+public class DriveTrainSide {
 	
 	private CANTalon front;
 	private CANTalon back;
@@ -25,12 +23,6 @@ public class DriveTrainSide extends Subsystem {
 	public void setPower(double power) {
 		front.set(power);
 		back.set(power);
-	}
-
-	@Override
-	protected void initDefaultCommand() {
-		// TODO Auto-generated method stub
-
 	}
 
 }
