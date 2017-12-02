@@ -26,6 +26,7 @@ public class TeleopDrive extends Command {
 		if (Math.abs(turn) < deadband) {
 			turn = 0;
 		}
+
 		double leftPow;
 		double rightPow;
 		if (fwBack > 0.0) {

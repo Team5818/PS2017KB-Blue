@@ -1,5 +1,7 @@
 package org.usfirst.frc.team7171.robot.subsystems;
 
+import org.usfirst.frc.team7171.robot.commands.TeleopDrive;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class DriveTrain extends Subsystem {
@@ -19,7 +21,7 @@ public class DriveTrain extends Subsystem {
 
 	@Override
 	protected void initDefaultCommand() {
-
+		setDefaultCommand(new TeleopDrive());
 	}
 
 }
