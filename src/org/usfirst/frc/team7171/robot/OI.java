@@ -42,10 +42,12 @@ public class OI {
 	
 	public static Joystick coDriverButtons = new Joystick(RobotMap.CD_BUTTONS);
 	private Button deadman;
+	private static final int N_DEADMAN = 0;
+
 	private DisableRobot disable;
 	
 	public OI() {
-		deadman = new JoystickButton(coDriverButtons, 0);
+		deadman = new JoystickButton(coDriverButtons, N_DEADMAN);
 		deadman.whenReleased(disable);
 		deadman.cancelWhenPressed(disable);
 	}
