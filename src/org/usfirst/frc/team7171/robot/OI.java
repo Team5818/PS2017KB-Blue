@@ -37,11 +37,10 @@ public class OI {
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
-	public static Joystick jsFwBack;
-	public static Joystick jsTurn;
+	public static Joystick jsFwBack = new Joystick(RobotMap.JS_FW_BACK);
+	public static Joystick jsTurn = new Joystick(RobotMap.JS_TURN);
 	
 	public OI() {
-		jsFwBack = new Joystick(RobotMap.JS_FW_BACK);
-		jsTurn = new Joystick(RobotMap.JS_TURN);
+
 	}
 }
