@@ -25,6 +25,9 @@ public class DriveTrainSide {
 		if (OI.deadman.get() == false) {
 			front.set(power);
 			back.set(power);
+		} else {
+			front.set(0);
+			back.set(0);
 		}
 	}
 
