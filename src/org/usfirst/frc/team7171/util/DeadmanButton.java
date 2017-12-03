@@ -10,8 +10,12 @@ public class DeadmanButton extends Trigger {
 	
 	private JoystickButton button;
 	
-	public DeadmanButton(GenericHID joy, int buttonNum, Command comm) {
+	public DeadmanButton(GenericHID joy, int buttonNum) {
 		button = new JoystickButton(joy, buttonNum);
+	}
+
+	// needed to start command running
+	public void bind(Command comm) {
 		Scheduler.getInstance().add(comm);
 		cancelWhenActive(comm);
 		whenInactive(comm);

@@ -1,6 +1,8 @@
 package org.usfirst.frc.team7171.robot;
 
 import org.usfirst.frc.team7171.robot.commands.DisableRobot;
+import org.usfirst.frc.team7171.util.DeadmanButton;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -41,14 +43,11 @@ public class OI {
 	public static Joystick jsTurn = new Joystick(RobotMap.JS_TURN);
 	
 	public static Joystick coDriverButtons = new Joystick(RobotMap.CD_BUTTONS);
-	private Button deadman;
+	private DeadmanButton deadman;
 	private static final int N_DEADMAN = 0;
 
-	private DisableRobot disable;
-	
 	public OI() {
-		deadman = new JoystickButton(coDriverButtons, N_DEADMAN);
-		deadman.whenReleased(disable);
-		deadman.cancelWhenPressed(disable);
+		deadman = new DeadmanButton(coDriverButtons, N_DEADMAN);
+		deadman.bind(new DisableRobot());
 	}
 }
