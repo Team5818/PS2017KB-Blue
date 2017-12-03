@@ -1,5 +1,6 @@
 package org.usfirst.frc.team7171.robot.subsystems;
 
+import org.usfirst.frc.team7171.robot.OI;
 import org.usfirst.frc.team7171.robot.RobotMap;
 
 import com.ctre.CANTalon;
@@ -21,8 +22,13 @@ public class DriveTrainSide {
 	}
 	
 	public void setPower(double power) {
-		front.set(power);
-		back.set(power);
+		if (!OI.deadman.get()) {
+			front.set(power);
+			back.set(power);
+		} else {
+			front.set(0);
+			back.set(0);
+		}
 	}
 
 }

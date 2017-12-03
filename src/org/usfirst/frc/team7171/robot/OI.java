@@ -1,9 +1,8 @@
 package org.usfirst.frc.team7171.robot;
 
-import org.usfirst.frc.team7171.robot.commands.ExampleCommand;
-
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -40,6 +39,11 @@ public class OI {
 	public static Joystick jsFwBack = new Joystick(RobotMap.JS_FW_BACK);
 	public static Joystick jsTurn = new Joystick(RobotMap.JS_TURN);
 	
+	public static Joystick coDriverButtons = new Joystick(RobotMap.CD_BUTTONS);
+	private static final int N_DEADMAN = 0;
+	public static Button deadman = new JoystickButton(coDriverButtons, N_DEADMAN);
+		
+
 	public OI() {
 
 	}
