@@ -1,6 +1,7 @@
 package org.usfirst.frc.team7171.robot.subsystems;
 
 
+import org.usfirst.frc.team7171.robot.OI;
 import org.usfirst.frc.team7171.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Solenoid;
@@ -18,7 +19,9 @@ public class Shooter extends Subsystem {
 	}
 
 	public void setPlunger(boolean extended) {
-		plunger.set(extended);
+		if (OI.deadman.get()) {
+			plunger.set(extended);
+		}
 	}
 
 	@Override
