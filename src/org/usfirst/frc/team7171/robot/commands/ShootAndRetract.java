@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.TimedCommand;
 
 public class ShootAndRetract extends CommandGroup {
-	private static double wait = 0.5;
+	private static final double WAIT = 0.5;
 
 	public ShootAndRetract() {
 		this.addSequential(new ActuateShooter());
