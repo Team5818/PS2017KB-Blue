@@ -22,7 +22,7 @@ public class DriveTrainSide {
 	}
 	
 	public void setPower(double power) {
-		if (!OI.deadman.get()) {
+		if (OI.deadman.get()) {
 			front.set(power);
 			back.set(power);
 		} else {
