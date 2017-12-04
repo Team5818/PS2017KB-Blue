@@ -4,6 +4,7 @@ package org.usfirst.frc.team7171.robot;
 import org.usfirst.frc.team7171.robot.commands.ExampleCommand;
 import org.usfirst.frc.team7171.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team7171.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team7171.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -24,6 +25,7 @@ public class Robot extends IterativeRobot {
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static DriveTrain dt;
 	public static OI oi;
+	public static Shooter shooter;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
