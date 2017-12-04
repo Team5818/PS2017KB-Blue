@@ -8,7 +8,7 @@ public class ShootAndRetract extends CommandGroup {
 
 	public ShootAndRetract() {
 		this.addSequential(new ActuateShooter());
-		this.addSequential(new TimedCommand(wait));
+		this.addSequential(new TimedCommand(WAIT));
 		this.addSequential(new ActuateShooter(true));
 	}
 }
