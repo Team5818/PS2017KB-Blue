@@ -11,7 +11,6 @@ public class DriveTrainSide {
 	private CANTalon back;
 	
 	public DriveTrainSide(boolean isRightSide) {
-		// probably need to reverse some of these
 		if (isRightSide) {
 			front = new CANTalon(RobotMap.R_TALON_F);
 			back = new CANTalon(RobotMap.R_TALON_B);

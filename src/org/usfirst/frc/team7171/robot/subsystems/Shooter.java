@@ -20,11 +20,6 @@ public class Shooter extends Subsystem {
 		sol3 = new Solenoid(RobotMap.SHOOTER_3);
 		sol4 = new Solenoid(RobotMap.SHOOTER_4);
 	}
-	@Override
-	protected void initDefaultCommand() {
-		// TODO Auto-generated method stub
-		
-	}
 	public void  setExtended(boolean extended)
 	{
 		if (OI.deadman.get()) {
@@ -33,5 +28,10 @@ public class Shooter extends Subsystem {
 			sol3.set(extended);
 			sol4.set(extended);
 		}
+	}
+
+	@Override
+	protected void initDefaultCommand() {
+		
 	}
 }

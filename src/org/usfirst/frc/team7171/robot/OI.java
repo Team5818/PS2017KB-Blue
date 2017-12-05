@@ -44,8 +44,8 @@ public class OI {
 	public static Joystick coDriverButtons = new Joystick(RobotMap.CD_BUTTONS);
 	public static Joystick DriverButtons = new Joystick(RobotMap.D_BUTTONS);
 	private static final int N_DEADMAN = 1;
-	public static Button deadman = new JoystickButton(coDriverButtons, N_DEADMAN);
 	private static final int N_SHOOT = 1;
+	public static Button deadman = new JoystickButton(coDriverButtons, N_DEADMAN);
 	private Button shoot;
 
 	public OI() {

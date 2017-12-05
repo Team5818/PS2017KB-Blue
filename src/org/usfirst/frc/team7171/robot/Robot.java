@@ -40,9 +40,8 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		s = new Shooter();
 		chooser.addDefault("Default Auto", new ExampleCommand());
-		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
-		chooser.addObject("ShootAuto", new ShootCommand(true));
+		chooser.addObject("Shoot Auto", new ShootCommand(true));
 		dt = new DriveTrain();
 		oi = new OI();
 	}
@@ -113,9 +112,6 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		if (OI.deadman.get()) {
-			DriverStation.reportError("deadman on", false);
-		}
 	}
 
 	/**
