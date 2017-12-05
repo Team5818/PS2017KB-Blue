@@ -5,6 +5,7 @@ import org.usfirst.frc.team7171.robot.commands.ExampleCommand;
 import org.usfirst.frc.team7171.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team7171.robot.subsystems.ExampleSubsystem;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -107,6 +108,9 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		if (OI.deadman.get()) {
+			DriverStation.reportError("deadman on", false);
+		}
 	}
 
 	/**

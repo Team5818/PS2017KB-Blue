@@ -18,6 +18,8 @@ public class DriveTrainSide {
 		} else {
 			front = new CANTalon(RobotMap.L_TALON_F);
 			back = new CANTalon(RobotMap.L_TALON_B);
+			front.setInverted(true);
+			back.setInverted(true);
 		}
 	}
 	

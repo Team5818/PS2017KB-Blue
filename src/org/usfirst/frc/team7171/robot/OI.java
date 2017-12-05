@@ -40,7 +40,7 @@ public class OI {
 	public static Joystick jsTurn = new Joystick(RobotMap.JS_TURN);
 	
 	public static Joystick coDriverButtons = new Joystick(RobotMap.CD_BUTTONS);
-	private static final int N_DEADMAN = 0;
+	private static final int N_DEADMAN = 1;
 	public static Button deadman = new JoystickButton(coDriverButtons, N_DEADMAN);
 		
 
