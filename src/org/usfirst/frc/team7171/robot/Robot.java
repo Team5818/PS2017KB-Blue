@@ -2,8 +2,10 @@
 package org.usfirst.frc.team7171.robot;
 
 import org.usfirst.frc.team7171.robot.commands.ExampleCommand;
+import org.usfirst.frc.team7171.robot.commands.ShootCommand;
 import org.usfirst.frc.team7171.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team7171.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team7171.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -25,7 +27,8 @@ public class Robot extends IterativeRobot {
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static DriveTrain dt;
 	public static OI oi;
-
+	public static Shooter s;
+	
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
 
@@ -35,11 +38,13 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
-		oi = new OI();
+		s = new Shooter();
 		chooser.addDefault("Default Auto", new ExampleCommand());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
+		chooser.addObject("ShootAuto", new ShootCommand(true));
 		dt = new DriveTrain();
+		oi = new OI();
 	}
 
 	/**

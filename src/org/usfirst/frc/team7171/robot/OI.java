@@ -1,5 +1,7 @@
 package org.usfirst.frc.team7171.robot;
 
+import org.usfirst.frc.team7171.robot.commands.ShootCommand;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -40,11 +42,15 @@ public class OI {
 	public static Joystick jsTurn = new Joystick(RobotMap.JS_TURN);
 	
 	public static Joystick coDriverButtons = new Joystick(RobotMap.CD_BUTTONS);
+	public static Joystick DriverButtons = new Joystick(RobotMap.D_BUTTONS);
 	private static final int N_DEADMAN = 1;
 	public static Button deadman = new JoystickButton(coDriverButtons, N_DEADMAN);
-		
+	private static final int N_SHOOT = 1;
+	private Button shoot;
 
 	public OI() {
-
+		shoot = new JoystickButton(DriverButtons, N_SHOOT);
+		shoot.whenPressed(new ShootCommand(true));
+		shoot.whenReleased(new ShootCommand(false));
 	}
 }
