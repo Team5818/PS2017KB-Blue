@@ -13,8 +13,7 @@ public class Shooter extends Subsystem {
 	private Solenoid sol3;
 	private Solenoid sol4;
 	
-	public Shooter()
-	{
+	public Shooter() {
 		sol1 = new Solenoid(RobotMap.SHOOTER_1);
 		sol2 = new Solenoid(RobotMap.SHOOTER_2);
 		sol3 = new Solenoid(RobotMap.SHOOTER_3);

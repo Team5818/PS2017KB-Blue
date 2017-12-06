@@ -8,8 +8,7 @@ public class ShootCommand extends Command {
 
 	private boolean extend;
 	
-	public ShootCommand(boolean e)
-	{
+	public ShootCommand(boolean e) {
 		requires(Robot.s);
 		setInterruptible(false);
 		setTimeout(.01);

@@ -42,14 +42,14 @@ public class OI {
 	public static Joystick jsTurn = new Joystick(RobotMap.JS_TURN);
 	
 	public static Joystick coDriverButtons = new Joystick(RobotMap.CD_BUTTONS);
-	public static Joystick DriverButtons = new Joystick(RobotMap.D_BUTTONS);
-	private static final int N_DEADMAN = 1;
-	private static final int N_SHOOT = 1;
-	public static Button deadman = new JoystickButton(coDriverButtons, N_DEADMAN);
+	public static Joystick driverButtons = new Joystick(RobotMap.D_BUTTONS);
+	private static final int DEADMAN = 1;
+	private static final int SHOOT = 1;
+	public static Button deadman = new JoystickButton(coDriverButtons, DEADMAN);
 	private Button shoot;
 
 	public OI() {
-		shoot = new JoystickButton(DriverButtons, N_SHOOT);
+		shoot = new JoystickButton(driverButtons, SHOOT);
 		shoot.whenPressed(new ShootCommand(true));
 		shoot.whenReleased(new ShootCommand(false));
 	}
