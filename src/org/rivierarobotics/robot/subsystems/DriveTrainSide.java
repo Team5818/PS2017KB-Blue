@@ -19,7 +19,6 @@
  */
 package org.rivierarobotics.robot.subsystems;
 
-import org.rivierarobotics.robot.OI;
 import org.rivierarobotics.robot.RobotMap;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
@@ -42,13 +41,8 @@ public class DriveTrainSide {
     }
 
     public void setPower(double power) {
-        if (OI.deadman.get()) {
-            front.set(power);
-            back.set(power);
-        } else {
-            front.set(0);
-            back.set(0);
-        }
+        front.set(power);
+        back.set(power);
     }
 
 }
