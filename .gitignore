@@ -2,7 +2,9 @@
 .project
 .factorypath
 .settings/
+dist/
 bin/
 build/
+gradleBuildDir/
 /.apt_generated/
-/dist/
+build.properties
