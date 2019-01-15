@@ -1,5 +1,5 @@
 /*
- * This file is part of PS2017KB-Blue, licensed under the GNU General Public License (GPLv3).
+ * This file is part of Placeholder-2019, licensed under the GNU General Public License (GPLv3).
  *
  * Copyright (c) Riviera Robotics <https://github.com/Team5818>
  * Copyright (c) contributors
@@ -17,30 +17,20 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.rivierarobotics.robot.subsystems;
 
-import org.rivierarobotics.robot.commands.TeleopDrive;
+package org.rivierarobotics.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-public class DriveTrain extends Subsystem {
+/**
+ *
+ */
+public class ExampleSubsystem extends Subsystem {
+	// Put methods for controlling this subsystem
+	// here. Call these from Commands.
 
-	private DriveTrainSide left;
-	private DriveTrainSide right;
-	
-	public DriveTrain() {
-		left = new DriveTrainSide(false);
-		right = new DriveTrainSide(true);
+	public void initDefaultCommand() {
+		// Set the default command for a subsystem here.
+		// setDefaultCommand(new MySpecialCommand());
 	}
-	
-	public void setPower(double powLeft, double powRight) {
-		left.setPower(powLeft);
-		right.setPower(powRight);
-	}
-
-	@Override
-	protected void initDefaultCommand() {
-		setDefaultCommand(new TeleopDrive());
-	}
-
 }

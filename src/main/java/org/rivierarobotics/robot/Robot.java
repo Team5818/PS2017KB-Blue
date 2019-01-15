@@ -1,5 +1,5 @@
 /*
- * This file is part of PS2017KB-Blue, licensed under the GNU General Public License (GPLv3).
+ * This file is part of Placeholder-2019, licensed under the GNU General Public License (GPLv3).
  *
  * Copyright (c) Riviera Robotics <https://github.com/Team5818>
  * Copyright (c) contributors
@@ -20,6 +20,7 @@
 
 package org.rivierarobotics.robot;
 
+import edu.wpi.first.wpilibj.TimedRobot;
 import org.rivierarobotics.robot.commands.ExampleCommand;
 import org.rivierarobotics.robot.commands.ShootCommand;
 import org.rivierarobotics.robot.subsystems.DriveTrain;
@@ -41,7 +42,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  */
-public class Robot extends IterativeRobot {
+public class Robot extends TimedRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static DriveTrain dt;
@@ -58,9 +59,9 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		s = new Shooter();
-		chooser.addDefault("Default Auto", new ExampleCommand());
+		chooser.setDefaultOption("Default Auto", new ExampleCommand());
 		SmartDashboard.putData("Auto mode", chooser);
-		chooser.addObject("Shoot Auto", new ShootCommand(true));
+		chooser.addOption("Shoot Auto", new ShootCommand(true));
 		dt = new DriveTrain();
 		oi = new OI();
 	}

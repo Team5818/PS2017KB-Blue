@@ -1,5 +1,5 @@
 /*
- * This file is part of PS2017KB-Blue, licensed under the GNU General Public License (GPLv3).
+ * This file is part of Placeholder-2019, licensed under the GNU General Public License (GPLv3).
  *
  * Copyright (c) Riviera Robotics <https://github.com/Team5818>
  * Copyright (c) contributors
@@ -17,19 +17,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 package org.rivierarobotics.robot.subsystems;
 
+import org.rivierarobotics.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-/**
- *
- */
-public class ExampleSubsystem extends Subsystem {
-	// Put methods for controlling this subsystem
-	// here. Call these from Commands.
+public class Shooter extends Subsystem {
 
-	public void initDefaultCommand() {
-		// Set the default command for a subsystem here.
-		// setDefaultCommand(new MySpecialCommand());
+	private Solenoid sol1;
+	private Solenoid sol2;
+	
+	public Shooter() {
+		sol1 = new Solenoid(RobotMap.SHOOTER_1);
+		sol2 = new Solenoid(RobotMap.SHOOTER_2);
+	}
+	public void  setExtended(boolean extended)
+	{
+
+		sol1.set(extended);
+		sol2.set(!extended);
+	}
+
+	@Override
+	protected void initDefaultCommand() {
+		
 	}
 }

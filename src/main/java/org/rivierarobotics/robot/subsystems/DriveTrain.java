@@ -1,5 +1,5 @@
 /*
- * This file is part of PS2017KB-Blue, licensed under the GNU General Public License (GPLv3).
+ * This file is part of Placeholder-2019, licensed under the GNU General Public License (GPLv3).
  *
  * Copyright (c) Riviera Robotics <https://github.com/Team5818>
  * Copyright (c) contributors
@@ -17,30 +17,31 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.rivierarobotics.robot.commands;
 
-import org.rivierarobotics.robot.Robot;
+package org.rivierarobotics.robot.subsystems;
 
-import edu.wpi.first.wpilibj.command.Command;
+import org.rivierarobotics.robot.commands.TeleopDrive;
 
-public class ShootCommand extends Command {
+import edu.wpi.first.wpilibj.command.Subsystem;
 
-	private boolean extend;
+public class DriveTrain extends Subsystem {
+
+	private DriveTrainSide left;
+	private DriveTrainSide right;
 	
-	public ShootCommand(boolean e) {
-		requires(Robot.s);
-		setInterruptible(false);
-		setTimeout(.01);
-		extend = e;
+	public DriveTrain() {
+		left = new DriveTrainSide(false);
+		right = new DriveTrainSide(true);
 	}
-	@Override
-	protected void initialize() {
-		Robot.s.setExtended(extend);
-		
+	
+	public void setPower(double powLeft, double powRight) {
+		left.setPower(powLeft);
+		right.setPower(powRight);
 	}
+
 	@Override
-	protected boolean isFinished() {
-		return isTimedOut();
+	protected void initDefaultCommand() {
+		setDefaultCommand(new TeleopDrive());
 	}
 
 }

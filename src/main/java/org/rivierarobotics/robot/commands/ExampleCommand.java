@@ -1,5 +1,5 @@
 /*
- * This file is part of PS2017KB-Blue, licensed under the GNU General Public License (GPLv3).
+ * This file is part of Placeholder-2019, licensed under the GNU General Public License (GPLv3).
  *
  * Copyright (c) Riviera Robotics <https://github.com/Team5818>
  * Copyright (c) contributors
@@ -17,49 +17,46 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 package org.rivierarobotics.robot.commands;
 
-import org.rivierarobotics.robot.OI;
 import org.rivierarobotics.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class TeleopDrive extends Command {
-
-	private static double deadband = 0.1;
-
-	public TeleopDrive() {
-		requires(Robot.dt);
-		setInterruptible(true);
+/**
+ *
+ */
+public class ExampleCommand extends Command {
+	public ExampleCommand() {
+		// Use requires() here to declare subsystem dependencies
+		requires(Robot.exampleSubsystem);
 	}
 
+	// Called just before this Command runs the first time
+	@Override
+	protected void initialize() {
+	}
+
+	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		double fwBack = OI.jsFwBack.getY();
-		double turn = OI.jsTurn.getX();
-
-		if (Math.abs(fwBack) < deadband) {
-			fwBack = 0;
-		}
-		if (Math.abs(turn) < deadband) {
-			turn = 0;
-		}
-
-		double leftPow;
-		double rightPow;
-		if (fwBack > 0.0) {
-			leftPow = fwBack + turn;
-			rightPow = fwBack - turn;
-		} else {
-			leftPow = fwBack - turn;
-			rightPow = fwBack + turn;
-		}
-		Robot.dt.setPower(leftPow, rightPow);
 	}
 
+	// Make this return true when this Command no longer needs to run execute()
 	@Override
 	protected boolean isFinished() {
 		return false;
 	}
 
+	// Called once after isFinished returns true
+	@Override
+	protected void end() {
+	}
+
+	// Called when another command which requires one or more of the same
+	// subsystems is scheduled to run
+	@Override
+	protected void interrupted() {
+	}
 }

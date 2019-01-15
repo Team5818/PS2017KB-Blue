@@ -1,5 +1,5 @@
 /*
- * This file is part of PS2017KB-Blue, licensed under the GNU General Public License (GPLv3).
+ * This file is part of Placeholder-2019, licensed under the GNU General Public License (GPLv3).
  *
  * Copyright (c) Riviera Robotics <https://github.com/Team5818>
  * Copyright (c) contributors
@@ -17,31 +17,31 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.rivierarobotics.robot.subsystems;
 
-import org.rivierarobotics.robot.RobotMap;
+package org.rivierarobotics.robot.commands;
 
-import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.command.Subsystem;
+import org.rivierarobotics.robot.Robot;
 
-public class Shooter extends Subsystem {
+import edu.wpi.first.wpilibj.command.Command;
 
-	private Solenoid sol1;
-	private Solenoid sol2;
+public class ShootCommand extends Command {
+
+	private boolean extend;
 	
-	public Shooter() {
-		sol1 = new Solenoid(RobotMap.SHOOTER_1);
-		sol2 = new Solenoid(RobotMap.SHOOTER_2);
+	public ShootCommand(boolean e) {
+		requires(Robot.s);
+		setInterruptible(false);
+		setTimeout(.01);
+		extend = e;
 	}
-	public void  setExtended(boolean extended)
-	{
-
-		sol1.set(extended);
-		sol2.set(!extended);
-	}
-
 	@Override
-	protected void initDefaultCommand() {
+	protected void initialize() {
+		Robot.s.setExtended(extend);
 		
 	}
+	@Override
+	protected boolean isFinished() {
+		return isTimedOut();
+	}
+
 }
